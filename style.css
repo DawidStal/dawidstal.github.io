@@ -424,6 +424,8 @@ ul {
 
 .about-text {
   text-align: center;
+  width: min(100%, 720px);
+  margin: 0 auto;
 }
 
 .about-details {
