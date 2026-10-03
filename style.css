@@ -676,10 +676,6 @@ ul {
 /* ============================
    CONTACT
    ============================ */
-#contact {
-  padding: var(--section-pad);
-}
-
 .contact-content {
   text-align: center;
   max-width: 600px;
