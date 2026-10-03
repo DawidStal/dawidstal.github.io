@@ -422,11 +422,16 @@ ul {
   font-size: 1.02rem;
 }
 
+.about-text {
+  text-align: center;
+}
+
 .about-details {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
   margin: 1.6rem 0 2rem;
+  justify-content: center;
 }
 
 .detail-item {
@@ -435,6 +440,9 @@ ul {
   gap: .75rem;
   background: var(--bg-card);
   padding: .75rem 1.2rem;
+  width: min(220px, 100%);
+  min-height: 76px;
+  box-sizing: border-box;
   border-radius: 10px;
   border: 1px solid var(--border);
 }
