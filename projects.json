@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "name": "Project Name",
+      "description": "Project description.",
+      "icon": "fas fa-square",
+      "technologies": [
+        "Technology 1",
+        "Technology 2"
+      ],
+      "links": {
+        "code": "https://github.com/"
+      }
+    }
+  ]
+}

@@ -30,6 +30,65 @@ async function loadComponents() {
 }
 
 // =============================
+// Project Data
+// =============================
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function renderProjects(projects) {
+  const projectsGrid = document.getElementById('projects-grid');
+
+  if (!projectsGrid) {
+    return;
+  }
+
+  projectsGrid.innerHTML = projects.map(project => {
+    const tags = project.technologies
+      .map(technology => `<span>${escapeHtml(technology)}</span>`)
+      .join('');
+    const links = project.links?.code
+      ? `<a href="${escapeHtml(project.links.code)}" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>`
+      : '';
+
+    return `
+      <article class="project-card" data-aos>
+        <div class="project-image">
+          <div class="project-placeholder"><i class="${escapeHtml(project.icon)}"></i></div>
+        </div>
+        <div class="project-info">
+          <h3>${escapeHtml(project.name)}</h3>
+          <p>${escapeHtml(project.description)}</p>
+          <div class="project-tags">${tags}</div>
+          <div class="project-links">${links}</div>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+async function loadProjects() {
+  const response = await fetch('projects.json');
+
+  if (!response.ok) {
+    throw new Error(`Unable to load projects.json (${response.status})`);
+  }
+
+  const data = await response.json();
+
+  if (!Array.isArray(data.projects)) {
+    throw new Error('projects.json must contain a projects array');
+  }
+
+  renderProjects(data.projects);
+}
+
+// =============================
 // Navbar Logic
 // =============================
 function initNavbar() {
@@ -103,7 +162,15 @@ function initScrollAnimations() {
 // =============================
 // Init
 // =============================
-document.addEventListener('DOMContentLoaded', () => {
-  loadComponents();
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    await Promise.all([
+      loadComponents(),
+      loadProjects()
+    ]);
+  } catch (error) {
+    console.error('Error loading project data:', error);
+  }
+
   initScrollAnimations();
 });
