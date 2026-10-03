@@ -608,7 +608,7 @@ ul {
   content: '';
   position: absolute;
   left: 14px;
-  top: 0;
+  top: 10px;
   bottom: 0;
   width: 2px;
   background: var(--border);
@@ -621,10 +621,10 @@ ul {
 
 .timeline-marker {
   position: absolute;
-  left: -40px;
+  left: -33px;
   top: 6px;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: var(--accent);
   border: 3px solid var(--bg-secondary);
