@@ -14,7 +14,7 @@
       }
     },
     {
-      "name": "Privacy-Preserving Fall Prediction",
+      "name": "Fall Prediction",
       "description": "Machine learning project that predicts pre-fall events while preserving user privacy.",
       "icon": "fas fa-briefcase",
       "technologies": [
@@ -28,7 +28,7 @@
     },
     {
       "name": "100 Days of Python",
-      "description": "A collection of Python projects and exercises completed as part of the 100 Days of Python challenge.",
+      "description": "A collection of Python projects from the 100 Days of Python challenge.",
       "icon": "fas fa-code",
       "technologies": [
         "Python"
