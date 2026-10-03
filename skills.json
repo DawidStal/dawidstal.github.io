@@ -1,0 +1,44 @@
+{
+  "skills": [
+    {
+      "name": "Python",
+      "description": "Used across automation, games, APIs, and machine learning projects.",
+      "icon": "fab fa-python"
+    },
+    {
+      "name": "JavaScript",
+      "description": "Used to build interactive web applications.",
+      "icon": "fab fa-js"
+    },
+    {
+      "name": "Java & Spring Boot",
+      "description": "Used for object-oriented programming and building REST services with Spring Boot.",
+      "icon": "fab fa-java"
+    },
+    {
+      "name": "HTML & CSS",
+      "description": "Used to create responsive and accessible web interfaces.",
+      "icon": "fab fa-html5"
+    },
+    {
+      "name": "Node.js",
+      "description": "Used for server-side JavaScript and backend web application development.",
+      "icon": "fab fa-node-js"
+    },
+    {
+      "name": "Databases",
+      "description": "Experience with MongoDB, MySQL, PostgreSQL, and Firebase.",
+      "icon": "fas fa-database"
+    },
+    {
+      "name": "Machine Learning",
+      "description": "Built a fall-prediction pipeline using TensorFlow, CNN-LSTM models, YOLO Pose, and OpenCV.",
+      "icon": "fas fa-brain"
+    },
+    {
+      "name": "Git",
+      "description": "Used for version control, project collaboration, feature branches, and development.",
+      "icon": "fab fa-git-alt"
+    }
+  ]
+}

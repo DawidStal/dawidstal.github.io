@@ -88,6 +88,38 @@ async function loadProjects() {
   renderProjects(data.projects);
 }
 
+function renderSkills(skills) {
+  const skillsGrid = document.getElementById('skills-grid');
+
+  if (!skillsGrid) {
+    return;
+  }
+
+  skillsGrid.innerHTML = skills.map(skill => `
+    <article class="skill-card" data-aos>
+      <div class="skill-icon"><i class="${escapeHtml(skill.icon)}"></i></div>
+      <h3>${escapeHtml(skill.name)}</h3>
+      <p>${escapeHtml(skill.description)}</p>
+    </article>
+  `).join('');
+}
+
+async function loadSkills() {
+  const response = await fetch('skills.json');
+
+  if (!response.ok) {
+    throw new Error(`Unable to load skills.json (${response.status})`);
+  }
+
+  const data = await response.json();
+
+  if (!Array.isArray(data.skills)) {
+    throw new Error('skills.json must contain a skills array');
+  }
+
+  renderSkills(data.skills);
+}
+
 // =============================
 // Navbar Logic
 // =============================
@@ -166,7 +198,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     await Promise.all([
       loadComponents(),
-      loadProjects()
+      loadProjects(),
+      loadSkills()
     ]);
   } catch (error) {
     console.error('Error loading project data:', error);
