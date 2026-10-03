@@ -120,6 +120,42 @@ async function loadSkills() {
   renderSkills(data.skills);
 }
 
+function renderExperience(entries) {
+  const timeline = document.getElementById('timeline');
+
+  if (!timeline) {
+    return;
+  }
+
+  timeline.innerHTML = entries.map(entry => `
+    <article class="timeline-item" data-aos>
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <span class="timeline-date">${escapeHtml(entry.date)}</span>
+        <h3>${escapeHtml(entry.title)}</h3>
+        <p class="timeline-org">${escapeHtml(entry.organization)}</p>
+        <p>${escapeHtml(entry.description)}</p>
+      </div>
+    </article>
+  `).join('');
+}
+
+async function loadExperience() {
+  const response = await fetch('experience.json');
+
+  if (!response.ok) {
+    throw new Error(`Unable to load experience.json (${response.status})`);
+  }
+
+  const data = await response.json();
+
+  if (!Array.isArray(data.entries)) {
+    throw new Error('experience.json must contain an entries array');
+  }
+
+  renderExperience(data.entries);
+}
+
 // =============================
 // Navbar Logic
 // =============================
@@ -199,10 +235,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     await Promise.all([
       loadComponents(),
       loadProjects(),
-      loadSkills()
+      loadSkills(),
+      loadExperience()
     ]);
   } catch (error) {
-    console.error('Error loading project data:', error);
+    console.error('Error loading page data:', error);
   }
 
   initScrollAnimations();

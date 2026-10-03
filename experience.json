@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "date": "Sep 2022 — Aug 2026",
+      "title": "Student",
+      "organization": "Maynooth University",
+      "description": "Achieved a 1st Class Honours in Computer Science & Software Engineering. Took part in a 6 month internship at Mastercard."
+    },
+    {
+      "date": "Sep 2026 — to date",
+      "title": "Software Engineer I",
+      "organization": "Mastercard",
+      "description": "Work on backend event driven microservices using Java and Spring Boot. Collaborate with cross-functional teams to design, develop, and deploy scalable software solutions."
+    }
+  ]
+}
