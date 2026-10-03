@@ -528,6 +528,8 @@ ul {
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: transform .3s var(--ease), box-shadow .3s;
 }
 
@@ -552,6 +554,9 @@ ul {
 
 .project-info {
   padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-info h3 {
@@ -584,6 +589,8 @@ ul {
 .project-links {
   display: flex;
   gap: 1.2rem;
+  margin-top: auto;
+  justify-content: center;
 }
 
 .project-links a {
