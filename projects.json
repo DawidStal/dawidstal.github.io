@@ -1,15 +1,40 @@
 {
   "projects": [
     {
-      "name": "Project Name",
-      "description": "Project description.",
-      "icon": "fas fa-square",
+      "name": "Personal Website",
+      "description": "My personal website showcasing my experience, skills and projects.",
+      "icon": "fas fa-globe",
       "technologies": [
-        "Technology 1",
-        "Technology 2"
+        "HTML",
+        "CSS",
+        "JavaScript"
       ],
       "links": {
-        "code": "https://github.com/"
+        "code": "https://github.com/DawidStal/dawidstal.github.io"
+      }
+    },
+    {
+      "name": "Privacy-Preserving Fall Prediction",
+      "description": "Machine learning project that predicts pre-fall events while preserving user privacy.",
+      "icon": "fas fa-briefcase",
+      "technologies": [
+        "Python",
+        "TensorFlow",
+        "OpenCV"
+      ],
+      "links": {
+        "code": "https://github.com/DawidStal/Privacy-Preserving-Fall-Prediction"
+      }
+    },
+    {
+      "name": "100 Days of Python",
+      "description": "A collection of Python projects and exercises completed as part of the 100 Days of Python challenge.",
+      "icon": "fas fa-code",
+      "technologies": [
+        "Python"
+      ],
+      "links": {
+        "code": "https://github.com/DawidStal/100daysOfPython"
       }
     }
   ]
