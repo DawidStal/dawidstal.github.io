@@ -156,6 +156,83 @@ async function loadExperience() {
   renderExperience(data.entries);
 }
 
+function renderActivities(activities) {
+  const activitiesGrid = document.getElementById('activities-grid');
+
+  if (!activitiesGrid) {
+    return;
+  }
+
+  activitiesGrid.innerHTML = activities.map(activity => {
+    const iconClass = activity.icon ? escapeHtml(activity.icon) : 'fas fa-calendar-alt';
+    const categoryBadge = activity.category
+      ? `<span class="activity-badge">${escapeHtml(activity.category)}</span>`
+      : '';
+    const dateBadge = activity.date
+      ? `<span class="activity-date">${escapeHtml(activity.date)}</span>`
+      : '';
+    const metaOrg = activity.organization
+      ? `<span class="activity-meta-item"><i class="fas fa-building"></i> ${escapeHtml(activity.organization)}</span>`
+      : '';
+    const metaLoc = activity.location
+      ? `<span class="activity-meta-item"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(activity.location)}</span>`
+      : '';
+    const meta = (metaOrg || metaLoc)
+      ? `<div class="activity-meta">${metaOrg}${metaLoc}</div>`
+      : '';
+    const tags = Array.isArray(activity.tags) && activity.tags.length > 0
+      ? `<div class="activity-tags">${activity.tags.map(t => `<span>${escapeHtml(t)}</span>`).join('')}</div>`
+      : '';
+    const link = activity.link
+      ? `<div class="activity-link"><a href="${escapeHtml(activity.link)}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Learn more</a></div>`
+      : '';
+    const badges = (categoryBadge || dateBadge)
+      ? `<div class="activity-badges-group">${categoryBadge}${dateBadge}</div>`
+      : '';
+    const footer = (tags || link)
+      ? `<div class="activity-footer">${tags}${link}</div>`
+      : '';
+
+    return `
+      <article class="activity-card" data-aos>
+        <div class="activity-icon"><i class="${iconClass}"></i></div>
+        <div class="activity-body">
+          <div class="activity-top">
+            <div class="activity-title-group">
+              <h3 class="activity-title">${escapeHtml(activity.title)}</h3>
+              ${meta}
+            </div>
+            ${badges}
+          </div>
+          <p class="activity-description">${escapeHtml(activity.description || '')}</p>
+          ${footer}
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+async function loadActivities() {
+  const activitiesGrid = document.getElementById('activities-grid');
+  if (!activitiesGrid) {
+    return;
+  }
+
+  const response = await fetch('activities.json');
+
+  if (!response.ok) {
+    throw new Error(`Unable to load activities.json (${response.status})`);
+  }
+
+  const data = await response.json();
+
+  if (!Array.isArray(data.activities)) {
+    throw new Error('activities.json must contain an activities array');
+  }
+
+  renderActivities(data.activities);
+}
+
 // =============================
 // Navbar Logic
 // =============================
@@ -236,7 +313,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       loadComponents(),
       loadProjects(),
       loadSkills(),
-      loadExperience()
+      loadExperience(),
+      loadActivities()
     ]);
   } catch (error) {
     console.error('Error loading page data:', error);

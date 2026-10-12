@@ -1,0 +1,78 @@
+{
+    "activities": [
+        {
+            "title": "Workday AI in Software Engineering Lifecycle",
+            "category": "Conference",
+            "date": "October 2025",
+            "location": "Dublin, Ireland",
+            "organization": "Workday",
+            "description": "Attended technical sessions exploring the integration of AI tools, LLMs, and intelligent automation across the software development lifecycle.",
+            "icon": "fas fa-users",
+            "tags": [
+                "Artificial Intelligence",
+                "SDLC",
+                "Automation",
+                "LLMs"
+            ],
+            "link": ""
+        },
+        {
+            "title": "Google European University Challenge",
+            "category": "Competition",
+            "date": "December 2025",
+            "location": "Online",
+            "organization": "Google Cloud",
+            "description": "Competed in a Europe-wide university challenge solving Google Cloud courses and challenges. Demonstrating proficiency in cloud computing and problem-solving skills.",
+            "icon": "fas fa-cloud",
+            "tags": [
+                "Google Cloud",
+                "Problem Solving"
+            ],
+            "link": ""
+        },
+        {
+            "title": "Mastercard Ireland Intern Hackathon - 1st Place Winner",
+            "category": "Hackathon",
+            "date": "May 2025",
+            "location": "Dublin, Ireland",
+            "organization": "Mastercard",
+            "description": "Designed and developed “MATA”, Mastercard Travel Assistant, an AI powered travel assistant in a 5-person team. Presented a demo to a panel of Mastercard executives, demonstrating its potential for enhancing customer experience.",
+            "icon": "fas fa-trophy",
+            "tags": [
+                "Teamwork",
+                "AI",
+                "Innovation"
+            ],
+            "link": ""
+        },
+        {
+            "title": "HackIreland",
+            "category": "Hackathon",
+            "date": "February 2025",
+            "location": "Dublin, Ireland",
+            "organization": "Dogpatch Labs",
+            "description": "Collaborated in a 4-person team at a two-day hackathon sponsored by top tech companies like Intercom, OpenAI, Stripe and Tines. Engineered a prototype for a web application that leveraged AI to analyse brand safety and facilitate funding for online creators.",
+            "icon": "fas fa-laptop-code",
+            "tags": [
+                "Collaboration",
+                "AI",
+                "Innovation"
+            ],
+            "link": ""
+        },
+        {
+            "title": "PyCon Ireland",
+            "category": "Conference",
+            "date": "November 2024",
+            "location": "Dublin, Ireland",
+            "organization": "Python Ireland",
+            "description": "Attended sessions highlighting various uses of python and its libraries and frameworks. Gained insights into best practices and emerging trends in the Python community.",
+            "icon": "fab fa-python",
+            "tags": [
+                "Python",
+                "Software Engineering"
+            ],
+            "link": ""
+        }
+    ]
+}
