@@ -789,10 +789,11 @@ ul {
 
 .activity-badges-group {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  gap: .6rem;
+  gap: .35rem;
   flex-shrink: 0;
+  text-align: center;
 }
 
 .activity-badge {
@@ -811,6 +812,7 @@ ul {
   font-size: .82rem;
   color: var(--text-secondary);
   font-weight: 600;
+  text-align: center;
 }
 
 .activity-description {
@@ -1065,6 +1067,12 @@ ul {
   .activity-top {
     flex-direction: column;
     gap: .6rem;
+  }
+
+  .activity-badges-group {
+    align-self: flex-start;
+    align-items: center;
+    text-align: center;
   }
 }
 
